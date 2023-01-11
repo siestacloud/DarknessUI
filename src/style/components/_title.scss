@@ -1,0 +1,39 @@
+.title {
+
+  display: block;
+  color: $blue;
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  margin: 10px 0px 40px 0px;
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 21px;
+  color: $dark;
+}
+.logo {
+  
+  margin: auto;
+  display: inline-block;
+  width: 64px;
+  height: 84px;
+  margin-bottom: 20px;
+  background-size: cover;
+}
+//  как только .white появляется измняю цвета элементов
+.white {
+  // background-color: $dark;
+
+  & .title {
+    color: $light;
+  }
+  & .subtitle {
+  margin: 10px 0px 40px 0px;
+
+    color: $light;
+  }
+}

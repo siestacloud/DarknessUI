@@ -1,0 +1,12 @@
+
+//* .collage
+.collage {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+
+  @media (max-width: 867px) {
+  flex-direction: column;
+  height: 200vh;
+  }
+}

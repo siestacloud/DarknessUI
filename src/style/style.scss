@@ -1,0 +1,81 @@
+// <ШРИФТЫ>
+
+// <Подключаем шрифты>
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+// </Подключаем шрифты>
+
+// <Шрифт по умолчанию>
+// $fontfamily: "Lato";
+$fontfamily: 'Jost', sans-serif;
+
+// </Шрифт по умолчанию>
+
+// </ШРИФТЫ>
+
+// <ПЕРЕМЕННЫЕ>
+$minWidth: 320px;
+$light: rgb(254, 255, 249);
+$light-trans: #ffffffbb;
+$dark: #0c0f16;
+$blue: rgb(53, 179, 211);
+
+$blue-light: rgb(171, 215, 226);
+$grey-light: rgb(192, 192, 192);
+$grey: #9c9c9c;
+
+// </ПЕРЕМЕННЫЕ>
+
+// <ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
+@import "_null";
+// </ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
+
+* {
+  scroll-behavior: smooth;
+}
+.root {
+  // overflow: hidden;
+
+  height: 100%;
+}
+// <ОБОЛОЧКА>
+.wrapper {
+  background-color: $dark;
+
+  
+  
+  overflow: hidden;
+  min-height: 100%;
+  display: grid;
+  grid-template: auto 1fr minmax(70px, auto) / minmax(80px, auto);
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+// </ОБОЛОЧКА>
+
+// <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+@import "_mixin";
+@import "components/_studyMe";
+@import "components/_contact";
+@import "components/_slide";
+@import "components/_collage";
+@import "components/_service";
+@import "components/_about";
+@import "components/_title";
+@import "components/_payment";
+@import "components/_preview";
+@import "components/_assist";
+
+
+
+
+@import "_scrollbar";
+@import "_header";
+@import "_footer";
+@import "_main";
+
+// </ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>

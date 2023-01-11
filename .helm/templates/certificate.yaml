@@ -1,0 +1,15 @@
+{{ if (eq .Values.werf.env "dev") }}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ingress-{{ .Chart.Name }}
+spec:
+  secretName: ingress-{{ .Chart.Name }}
+  issuerRef:
+    name: "{{ .Values.global.ingress.issuer }}"
+    kind: ClusterIssuer
+  commonName: "{{ .Values.global.ingress.hostname }}"
+  dnsNames:
+  - "{{ .Values.global.ingress.hostname }}"
+{{ end }}

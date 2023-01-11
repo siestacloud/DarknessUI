@@ -1,0 +1,8 @@
+vendor
+example
+.helm
+!.helm/nginx.conf
+!.helm/30-fix-front-url.sh
+.werf_secret_key
+.git
+README.md

@@ -1,0 +1,89 @@
+// <ОСНОВНОЙ БЛОК>
+
+.about {
+  display: grid;
+  grid-template: 1fr / minmax(15px, 1fr) minmax(10px, 1252px) minmax(15px, 1fr);
+  padding: 50px 0px 100px 0px;
+  text-align: center;
+  // background-color: $dark;
+  &:before {
+    content: "";
+    left: 0px;
+    top: -150px;
+    z-index: 1;
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    background: linear-gradient(to top, $dark, transparent);
+    @media (max-width: 867px) {
+      display: none;
+    }
+  }
+
+
+
+
+  &__wrapper {
+    grid-area: 1/2;
+  }
+
+  .content {
+    &__row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      p {
+        text-align: justify;
+        font-size: 1.5em;
+        font-weight: 300;
+        letter-spacing: 2px;
+        line-height: 25px;
+        color: #fff;
+        span {
+          font-weight: 500;
+          color: $blue;
+        }
+      }
+      @media (max-width: 867px) {
+        flex-direction: column;
+      }
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-basis: 50%;
+      @media (max-width: 867px) {
+        align-items: stretch;
+      }
+    }
+    &__img {
+      min-height: 300px;
+      flex-basis: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+    }
+    &__btn {
+      margin-top: 20px;
+      font-size: 1.3em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 15px 25px;
+      background-color: $light;
+      color: $dark;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $blue;
+        color: $light;
+      }
+    }
+    @media (max-width: 867px) {
+      &__hide {
+        display: none;
+      }
+    }
+  }
+}

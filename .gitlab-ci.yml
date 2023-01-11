@@ -1,0 +1,106 @@
+stages:
+  - build
+  - deploy-dev
+  - deploy-prod
+  - cleanup
+image: "registry.werf.io/werf/werf:latest"
+Build and Publish:
+  stage: build
+  script:
+    - type werf && source $(werf ci-env gitlab --as-file)
+    - werf build
+  only: [merge_requests]
+  # tags: [werf-kubernetes]
+
+variables:
+  KUBERNETES_POD_ANNOTATIONS_1: "container.apparmor.security.beta.kubernetes.io/build=unconfined"
+  KUBERNETES_POD_ANNOTATIONS_2: "container.apparmor.security.beta.kubernetes.io/helper=unconfined"
+
+
+.base_deploy: &base_deploy
+  script:
+    - type werf && source $(werf ci-env gitlab --as-file)
+    - cat .helm/values-${CI_ENVIRONMENT_NAME}-encrypted.yaml | werf helm secret decrypt -o .helm/values-${CI_ENVIRONMENT_NAME}-decrypted.yaml
+    - werf converge --namespace="vpervieruki-${CI_ENVIRONMENT_NAME}" --skip-build --set "global.env_url=$(echo ${CI_ENVIRONMENT_URL} | cut -d / -f 3)" --values=".helm/values-${CI_ENVIRONMENT_NAME}-decrypted.yaml"
+    - rm -rf .helm/values-${CI_ENVIRONMENT_NAME}-decrypted.yaml
+  dependencies:
+    - Build and Publish
+  only: [merge_requests]
+  allow_failure: false
+
+Deploy to Dev:
+  <<: *base_deploy
+  stage: deploy-dev
+  environment:
+    name: dev
+    url: https://firsthand.duduh.ru
+  tags: [werf-kubernetes-nas]
+  needs: [Build and Publish]
+
+Deploy to Prod:
+  <<: *base_deploy 
+  stage: deploy-prod
+  environment:
+    name: prod
+    url: https://впервыеруки.рф
+  needs: [Build and Publish, Deploy to Dev]
+  tags: [werf-kubernetes-nas]
+  when: manual
+
+# Deploy to Dev v2:
+#   <<: *base_deploy
+#   stage: deploy-dev
+#   environment:
+#     name: dev
+#     url: http://dev.api.inet
+#   variables:
+#     CI_ENVIRONMENT_VER: "v2-"
+#   needs: [Build and Publish]
+#   except:
+#   - ".helm/values-infra-dev.yaml"
+#   - ".helm/values-infra-prod.yaml"
+#   - ".helm/secret-values-infra-dev.yaml"
+#   - ".helm/secret-values-infra-prod.yaml"
+
+# Deploy to Prod v2:
+#   <<: *base_deploy
+#   stage: deploy-prod
+#   environment:
+#     name: prod
+#     url: https://api.inet
+#   variables:
+#     CI_ENVIRONMENT_VER: "v2-"
+#   needs: [Build and Publish, Deploy to Dev v2]
+#   when: manual
+
+# After merge deploy to Prod:
+#   <<: *base_deploy
+#   stage: deploy-prod
+#   environment:
+#     name: prod
+#     url: https://api.inet
+#   only: [master]
+
+# After merge deploy to Prod v2:
+#   <<: *base_deploy
+#   stage: deploy-prod
+#   environment:
+#     name: prod
+#     url: https://api.inet
+#   variables:
+#     CI_ENVIRONMENT_VER: "v2-"
+#   only: [master]
+
+
+# Cleanup:
+#   stage: cleanup
+#   script:
+#     - type multiwerf && . $(multiwerf use 1.2 stable --as-file)
+#     - type werf && source $(werf ci-env gitlab --as-file)
+#     - docker login -u nobody -p ${WERF_IMAGES_CLEANUP_PASSWORD} ${WERF_REPO}
+#     - werf cleanup
+#   only: [schedules]
+#   tags: [werf]
+
+
+  

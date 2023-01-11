@@ -1,0 +1,46 @@
+{{ if (eq .Values.werf.env "dev") }}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: {{ .Values.global.ingress.hostname }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ .Chart.Name }}
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+      - backend:
+          service:
+            name: backend
+            port:
+              number: 8080
+        path: /api
+        pathType: Prefix
+      - backend:
+          service:
+            name: bot
+            port:
+              number: 8080
+        path: /bot
+        pathType: Prefix
+      - backend:
+          service:
+            name: bot
+            port:
+              number: 9000
+        path: /news
+        pathType: Prefix
+  tls:
+  - hosts:
+    - '{{ .Values.global.ingress.hostname }}'
+    secretName: ingress-{{ .Chart.Name }}
+---
+{{ end }}

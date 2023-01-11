@@ -1,0 +1,13 @@
+//* .study
+.study {
+  display: grid;
+  grid-template: 1fr / minmax(15px, 1fr) minmax(10px, 1652px) minmax(15px, 1fr);
+  padding: 50px 0px;
+  text-align: center;
+  background-color: $dark;
+
+  //* .study__wrapper
+  &__wrapper {
+    grid-area: 1/2;
+  }
+}

@@ -1,0 +1,23 @@
+@mixin tr($x, $y, $z) {
+    transform: translate3d($x, $y, $z);
+}
+
+@mixin f($a, $b, $c) {
+    display: flex;
+    justify-content: $a;
+    align-items: $b;
+    flex-direction: $c;
+}
+
+@mixin font($a, $b, $c, $d,$e) {
+    font-size: $a;
+    font-weight: $b;
+    text-transform: $c;
+    letter-spacing: $d;
+    line-height: $e;
+}
+
+@mixin anim($time, $delay) {
+    transition-duration: $time;
+    transition-delay: $delay;
+}

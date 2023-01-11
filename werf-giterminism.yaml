@@ -1,0 +1,5 @@
+giterminismConfigVersion: 1
+helm:
+  allowUncommittedFiles:
+  - .helm/values-dev-decrypted.yaml
+  - .helm/values-prod-decrypted.yaml
