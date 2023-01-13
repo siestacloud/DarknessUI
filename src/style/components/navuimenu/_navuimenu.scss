@@ -1,0 +1,65 @@
+
+
+
+// боковое меню
+.navbar{
+  grid-area: 1/2;
+
+  @media (max-width: 867px) {
+    grid-area: 1/2;
+  
+  }
+    &__menu{
+    position: sticky;
+    top: 30px;      
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 30px;
+    margin: 0px 25px;
+    border-radius: 20px;
+    background-color: #16182D;
+    border: 1px solid #23243E;
+
+    @media (max-width: 867px) {
+      position: static;
+      // height: 90vh;
+      // width:  100%;
+
+    }
+    
+  
+    // width: 100%;
+    // left: 3%;
+    // height: 350px;
+  }
+
+  
+  
+  &__link {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    line-height: 27px;
+    transition: color 200ms ease-in-out;
+
+    @media (max-width: 867px) {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 40px;
+    }
+    @media (max-width: 367px) {
+      font-size: 20px;
+    
+    }
+
+  }
+  
+  &__link:last-child {
+    margin-bottom: 0;
+  }
+  
+  &__link:hover {
+    color: #F73164;
+  }
+}

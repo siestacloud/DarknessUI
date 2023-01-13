@@ -1,0 +1,14 @@
+// основной контент
+.content{
+  grid-area: 1/3;
+
+
+  @media (max-width: 867px) {
+    grid-area: 2/2;
+  
+    text-align: center;
+  }
+
+}
+
+

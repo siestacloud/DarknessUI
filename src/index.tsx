@@ -4,7 +4,6 @@ import {BrowserRouter} from 'react-router-dom';
 import {AppStateContextProvider} from './hooks/appHook';
 import App from './App';
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

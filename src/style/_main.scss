@@ -5,4 +5,19 @@
   position: relative;
 }
 
+// оболочка над меню и основным контентом
+.container {
+  display: grid;
+  grid-template: 1fr/ 4fr;
+  grid-template: 1fr / minmax(15px, 1fr) minmax(10px, 300px) minmax(10px, 1000px)  minmax(15px, 1fr);
+  
+  @media (max-width: 867px) {
+    grid-template: 100vh 1fr / minmax(15px, 1fr)  minmax(10px, 1000px)  minmax(15px, 1fr);
+    
+  
+  }
+  // grid-template-areas: "nav content";
+  // position: relative;
+  // overflow: scroll;
 
+}

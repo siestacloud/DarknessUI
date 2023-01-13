@@ -2,28 +2,20 @@
 
 // <Подключаем шрифты>
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
+@import "../fonts/Circe/stylesheet.scss";
 
 // </Подключаем шрифты>
 
 // <Шрифт по умолчанию>
-// $fontfamily: "Lato";
-$fontfamily: 'Jost', sans-serif;
-
+$fontfamily: "Circe", sans-serif;
 // </Шрифт по умолчанию>
 
 // </ШРИФТЫ>
 
 // <ПЕРЕМЕННЫЕ>
-$minWidth: 320px;
 $light: rgb(254, 255, 249);
-$light-trans: #ffffffbb;
-$dark: #0c0f16;
-$blue: rgb(53, 179, 211);
-
-$blue-light: rgb(171, 215, 226);
-$grey-light: rgb(192, 192, 192);
-$grey: #9c9c9c;
+$dark: #090a1a;
 
 // </ПЕРЕМЕННЫЕ>
 
@@ -42,13 +34,12 @@ $grey: #9c9c9c;
 // <ОБОЛОЧКА>
 .wrapper {
   background-color: $dark;
+  color: $light;
 
-  
-  
-  overflow: hidden;
+  // overflow: hidden;
   min-height: 100%;
   display: grid;
-  grid-template: auto 1fr minmax(70px, auto) / minmax(80px, auto);
+  grid-template: minmax(70px, auto) 1fr minmax(70px, auto) / minmax(80px, auto);
   grid-template-areas:
     "header"
     "main"
@@ -59,23 +50,31 @@ $grey: #9c9c9c;
 
 // <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 @import "_mixin";
-@import "components/_studyMe";
-@import "components/_contact";
-@import "components/_slide";
-@import "components/_collage";
-@import "components/_service";
-@import "components/_about";
-@import "components/_title";
-@import "components/_payment";
-@import "components/_preview";
-@import "components/_assist";
 
+// подключаю стили для бокового меню и секции с основным контентом
+@import "./components/navuimenu/_navuimenu";
 
+@import "./components/asideuicontent/_asideuicontent";
+@import "./components/asideuicontent/_section"; //* общие стиль для всех секций с UI элементами
+@import "./components/asideuicontent/_title"; //* общий стиль заголовка для всех секций с UI элементами
+
+// подключаю стили для UI элементов
+@import "./components/btnsUI/_btns"; //* секция с кнопками
+@import "./components/tooltipsUI/_tooltip-right"; //* секция с всплывающими подсказками
+@import "./components/dropdownsUI/_dropdowns"; //* секция с выпадающими окнами
+@import "./components/checkboxUI/_checkbox"; //* секция с чекбоксами
+@import "./components/checkboxUI/_switch"; //* секция со свитчами
+@import "./components/inputsUI/_inputs"; //* секция с полем ввода
+@import "./components/inputsUI/_search"; //* секция с поиском
 
 
 @import "_scrollbar";
+
+// базовая расстановка контента на странице
 @import "_header";
-@import "_footer";
 @import "_main";
+@import "_footer";
+
+@import "_mod";
 
 // </ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
