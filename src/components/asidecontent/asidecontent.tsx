@@ -51,8 +51,7 @@ function AsideUIContent() {
       {/* Меню сайта */}
       <section id='menubar' className="section ">
         <h2 className="title ">6. Меню сайта</h2>
-        <button className="btn ">Button</button>
-        <button className="btn--rounded">Button</button>
+        
       </section>
 
       {/* Модальное окно */}

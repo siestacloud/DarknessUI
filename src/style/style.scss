@@ -52,7 +52,7 @@ $dark: #090a1a;
 @import "_mixin";
 
 // подключаю стили для бокового меню и секции с основным контентом
-@import "./components/navuimenu/_navuimenu";
+@import "./components/navmenu/_navmenu";
 
 @import "./components/asideuicontent/_asideuicontent";
 @import "./components/asideuicontent/_section"; //* общие стиль для всех секций с UI элементами

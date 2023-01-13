@@ -1,6 +1,6 @@
 import React from 'react';
-import  NavUIMenu  from "../components/navuimenu/navuimenu";
-import  AsideUIContent  from "../components/asidecontent/asideuicontent";
+import  NavUIMenu  from "../components/navmenu/navmenu";
+import  AsideUIContent  from "../components/asidecontent/asidecontent";
 
 function UIPageOne() {
   return (
