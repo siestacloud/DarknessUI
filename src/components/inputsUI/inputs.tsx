@@ -12,8 +12,8 @@ export function InputUI() {
 }
 
 
-export function InputUISearch() {
 
+export function InputUISearch() {
 
   return (
     // 5. Поля ввода
@@ -23,6 +23,18 @@ export function InputUISearch() {
   );
 }
 
+
+export function InputUIv2() {
+
+  return (
+    // 5. Поля ввода
+    <div className="input-v2">
+      <input type="text" required/>
+        <span>user</span>
+        <i></i>
+    </div>
+  );
+}
 
 
 // export default BtnUI;

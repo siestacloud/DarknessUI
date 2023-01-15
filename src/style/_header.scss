@@ -2,16 +2,59 @@
 
 .header {
   grid-area: header;
-  display: grid;
-  grid-template: 1fr / minmax(15px, 1fr) minmax(10px, 1252px) minmax(15px, 1fr);
-  text-align: center;
   color: $light;
-  &__wrapper {
+
+  .parallax {
     grid-area: 1/2;
-    position: fixed;
-    z-index: 100;
-    // border-color: $blue;
-    // background-color: $blue;
-    // margin: 10px 5px;
+    width: 100%;
+    height: 100vh;
+    transform-style: preserve-3d;
+    overflow: hidden;
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  }
+  #txt {
+    font-family: $fontfamily-v2;
+    font-weight: 700;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    color: #b3c3dd;
+    font-size: 10em;
+    font-weight: 1000;
+    white-space: nowrap;
+    text-transform: uppercase;
+    -webkit-text-stroke: 4px #112434;
+    // height: 100vh;
+
+    @media (max-width: 867px) {
+      font-size: 105px;
+      top: 50%;
+      right: 50%;
+    -webkit-text-stroke: 2px #112434;
+
+      // transform: translate(-50%, -50%);
+
+    }
+  }
+
+  .ok {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 }
