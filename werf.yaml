@@ -1,6 +1,0 @@
-configVersion: 1
-project: front
----
-image: frontend
-dockerfile: ./Dockerfile
-context: ./
