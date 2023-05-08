@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/DarknessUI/static/css/main.5068e787.css",
+    "main.js": "/DarknessUI/static/js/main.35bca60a.js",
+    "static/media/01.jpg": "/DarknessUI/static/media/01.61d3f525ca12d7ab52a6.jpg",
+    "static/media/q5.png": "/DarknessUI/static/media/q5.c17726de7e6dd4416d05.png",
+    "static/media/03.jpg": "/DarknessUI/static/media/03.668dd90ca3259eeaf48c.jpg",
+    "static/media/q1.png": "/DarknessUI/static/media/q1.2143b7b15cd4e6a168ac.png",
+    "static/media/ship.jpg": "/DarknessUI/static/media/ship.23c7030f5d53122e44fd.jpg",
+    "static/media/Circe-Regular.eot": "/DarknessUI/static/media/Circe-Regular.cb92908127bb9d67856e.eot",
+    "static/media/Circe-Regular.ttf": "/DarknessUI/static/media/Circe-Regular.f80cf2f1a50fc5107f4c.ttf",
+    "static/media/Circe-Bold.eot": "/DarknessUI/static/media/Circe-Bold.88073c2acd9bd5c499ea.eot",
+    "static/media/Circe-Bold.ttf": "/DarknessUI/static/media/Circe-Bold.d9332714c66b14bb30e5.ttf",
+    "static/media/Circe-ExtraBold.eot": "/DarknessUI/static/media/Circe-ExtraBold.006820b970072397c02a.eot",
+    "static/media/Circe-ExtraBold.ttf": "/DarknessUI/static/media/Circe-ExtraBold.0770d27b2c585eeb7c93.ttf",
+    "static/media/02.jpg": "/DarknessUI/static/media/02.af19c9a84da6ddefd61a.jpg",
+    "static/media/04.jpg": "/DarknessUI/static/media/04.c415efaf5d5eb03d67b1.jpg",
+    "static/media/Circe-Bold.woff": "/DarknessUI/static/media/Circe-Bold.fca9743700608e1abf6a.woff",
+    "static/media/Circe-Regular.woff": "/DarknessUI/static/media/Circe-Regular.a5168fcec068fa77220a.woff",
+    "static/media/Circe-ExtraBold.woff": "/DarknessUI/static/media/Circe-ExtraBold.3606d5d4c3d492c2a613.woff",
+    "static/media/q2.png": "/DarknessUI/static/media/q2.c5854241030f66cefbaf.png",
+    "static/media/Circe-Bold.woff2": "/DarknessUI/static/media/Circe-Bold.b64357adbf12b109fcf2.woff2",
+    "static/media/Circe-Regular.woff2": "/DarknessUI/static/media/Circe-Regular.2c54c074533cf5620761.woff2",
+    "static/media/Circe-ExtraBold.woff2": "/DarknessUI/static/media/Circe-ExtraBold.41d0f80caec1e985840f.woff2",
+    "static/media/q4.png": "/DarknessUI/static/media/q4.730e21283ed8caf89292.png",
+    "static/media/q3.png": "/DarknessUI/static/media/q3.d6ea3081ee25a611a718.png",
+    "static/media/news.svg": "/DarknessUI/static/media/news.3196dc867b509e17a31c.svg",
+    "static/media/picture.svg": "/DarknessUI/static/media/picture.166ee1ff87d10f0d273f.svg",
+    "static/media/close.svg": "/DarknessUI/static/media/close.904454dbb1bd0a91d230.svg",
+    "static/media/search.svg": "/DarknessUI/static/media/search.c69f9080d42d81ff0739.svg",
+    "index.html": "/DarknessUI/index.html",
+    "static/media/bubble.svg": "/DarknessUI/static/media/bubble.de37b00522260f24dcff.svg",
+    "static/media/done.svg": "/DarknessUI/static/media/done.20782f3a0126635f637d.svg",
+    "main.5068e787.css.map": "/DarknessUI/static/css/main.5068e787.css.map",
+    "main.35bca60a.js.map": "/DarknessUI/static/js/main.35bca60a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5068e787.css",
+    "static/js/main.35bca60a.js"
+  ]
+}
